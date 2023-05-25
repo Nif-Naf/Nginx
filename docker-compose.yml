@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+
+  nginx:
+    build: .
+    container_name: server
+    hostname: server
+
+  django:
+    build: Dockerfile
+    container_name: main
+    hostname: main
+    command: python my_parser/manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+
+  html_application_one:
+    build: .
+    ports:
+      - "8002:8002"
+
+  html_application_two:
+    build: .
+    ports:
+      - "8001:8001"
