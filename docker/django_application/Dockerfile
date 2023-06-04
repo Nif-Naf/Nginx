@@ -9,9 +9,9 @@ ENV PYTHONDONTWRITEBYTECODE=1
 # Устанавливает рабочий каталог контейнера — "app"
 WORKDIR /code
 # Копирует все файлы из нашего локального проекта в контейнер
-COPY . /code/
+COPY ../../applications/django_application /code/
 #
-COPY requirements.txt /code/
+COPY ../../requirements.txt /code/
 # Обновляем pip.
 RUN pip install --upgrade pip
 # Запускает команду pip install для всех библиотек, перечисленных в requirements.txt
