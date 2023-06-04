@@ -12,6 +12,18 @@ services:
     ports:
       - "8000:80"
 
+  fastapi:
+    build:
+      context: .
+      dockerfile: ./docker/fastapi_application/Dockerfile
+    container_name: fastapi
+    hostname: fastapi
+    command: uvicorn app.main:first_app --host 0.0.0.0:8001
+#    volumes:
+#      - .:/app
+    ports:
+      - "8001:8001"
+
   django:
     build:
       context: .
