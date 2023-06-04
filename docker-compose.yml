@@ -9,6 +9,8 @@ services:
     image: nginx:alpine
     container_name: server
     hostname: server
+    ports:
+      - "8000:80"
 
   django:
     build:
