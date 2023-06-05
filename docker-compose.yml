@@ -18,9 +18,7 @@ services:
       dockerfile: ./docker/fastapi_application/Dockerfile
     container_name: fastapi
     hostname: fastapi
-    command: uvicorn app.main:first_app --host 0.0.0.0:8001
-#    volumes:
-#      - .:/app
+    command: python app/__main__.py
     ports:
       - "8001:8001"
 
